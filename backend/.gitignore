@@ -1,0 +1,35 @@
+# Environment Variables
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+instance/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Database
+*.sqlite3
+*.db
+healthcare.db
+
+# Logs
+*.log
+login_debug.log
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
