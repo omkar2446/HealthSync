@@ -23,7 +23,7 @@ else:
         'http://127.0.0.1:5173',
     ]
 
-CORS(app, resources={r"/api/*": {"origins": allowed_origins}})
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Database Configuration (PostgreSQL / SQLite fallback)
 db_url = os.environ.get('DATABASE_URL')
