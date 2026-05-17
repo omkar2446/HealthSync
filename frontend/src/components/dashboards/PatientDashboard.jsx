@@ -33,13 +33,15 @@ const PatientDashboard = () => {
     fetchDashboardData();
   }, []);
 
-  const triggerSOS = async () => {
-    try {
-      const res = await api.post('/patient/sos');
-      toast.error(res.data.message, { icon: '🚨', autoClose: 5000 });
-    } catch (err) {
-      toast.error('Failed to trigger SOS');
-    }
+  const triggerSOS = (e) => {
+    e.preventDefault();
+    // Immediately start the direct phone call
+    window.location.href = 'tel:9405909432';
+
+    // Trigger the background API call silently
+    api.post('/patient/sos').catch(err => {
+      console.error('Failed to trigger SOS API:', err);
+    });
   };
 
   const handleLogVitals = async (e) => {
@@ -68,9 +70,9 @@ const PatientDashboard = () => {
           <p className="text-slate-600 mt-1">Here is your health overview</p>
         </div>
         <div className="flex flex-wrap gap-3">
-          <a href="tel:9405909432" onClick={triggerSOS} className="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg font-bold transition-all shadow-md flex items-center gap-2 animate-pulse">
+          <button onClick={triggerSOS} className="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg font-bold transition-all shadow-md flex items-center gap-2 animate-pulse">
             <AlertCircle className="w-5 h-5" /> SOS EMERGENCY
-          </a>
+          </button>
           <Link to="/book-appointment" className="bg-primary hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-medium transition-colors shadow-sm flex items-center gap-2">
             <Calendar className="w-4 h-4" /> Book Appointment
           </Link>
