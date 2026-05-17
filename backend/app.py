@@ -18,9 +18,7 @@ if frontend_origins:
     allowed_origins = [origin.strip() for origin in frontend_origins.split(',') if origin.strip()]
 else:
     allowed_origins = [
-        'https://health-sync-seven-eta.vercel.app',
-        'http://localhost:5173',
-        'http://127.0.0.1:5173',
+        'https://health-sync-seven-eta.vercel.app'
     ]
 
 CORS(app, resources={r"/api/*": {"origins": allowed_origins}})
