@@ -7,17 +7,17 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Navbar from './components/Navbar';
 import DashboardLayout from './components/layout/DashboardLayout';
 
-import Home from './pages/Home';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import BookAppointment from './pages/BookAppointment';
-import MedicalRecords from './pages/MedicalRecords';
-import AdminDashboard from './pages/AdminDashboard';
-import DoctorPanel from './pages/DoctorPanel';
-import SymptomChecker from './pages/SymptomChecker';
-import Medicines from './pages/Medicines';
-import Telemedicine from './pages/Telemedicine';
+import Home from '../pages/Home';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
+import Dashboard from '../pages/Dashboard';
+import BookAppointment from '../pages/BookAppointment';
+import MedicalRecords from '../pages/MedicalRecords';
+import AdminDashboard from '../pages/AdminDashboard';
+import DoctorPanel from '../pages/DoctorPanel';
+import SymptomChecker from '../pages/SymptomChecker';
+import Medicines from '../pages/Medicines';
+import Telemedicine from '../pages/Telemedicine';
 
 function App() {
   return (
